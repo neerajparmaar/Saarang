@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Animation</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script>
+ (function( $ ) {
+	$(function() {
+		$( "#reset1" ).click(function() {           //Reset fuction for red planet
+			$( "#star1" ).addClass( "off" );
+			setTimeout(function() {
+             $('#star1').removeClass("off");
+             $('#star1').removeClass("pause");
+                }, 30);
+		});
+		$( "#start1" ).click(function() {           //Start fuction for red planet
+			$( "#star1" ).removeClass( "off" );
+			$( "#star1" ).removeClass( "pause" );
+		});
+	    $( "#stop1" ).click(function() {            //Stop fuction for red planet
+	    	$( "#star1" ).addClass( "pause" );
+	    });
+	    
+	    $( "#reset2" ).click(function() {           //Reset fuction for green planet
+			$( "#star2" ).addClass( "off" );
+			setTimeout(function() {
+             $('#star2').removeClass("off");
+             $('#star2').removeClass("pause");
+                }, 30);
+		});
+		$( "#start2" ).click(function() {           //Start fuction for green planet
+			$( "#star2" ).removeClass( "off" );
+			$( "#star2" ).removeClass( "pause" );
+		});
+	    $( "#stop2" ).click(function() {            //Stop fuction for green planet
+	    	$( "#star2" ).addClass( "pause" );
+	    });
+	    
+	    $( "#reset3" ).click(function() {           //Reset fuction for blue planet
+			$( "#star3" ).addClass( "off" );
+			setTimeout(function() {
+             $('#star3').removeClass("off");
+             $('#star3').removeClass("pause");
+                }, 30);
+		});
+		$( "#start3" ).click(function() {           //Start fuction for blue planet
+			$( "#star3" ).removeClass( "off" );
+			$( "#star3" ).removeClass( "pause" );
+		});
+	    $( "#stop3" ).click(function() {             //Stop fuction for blue planet
+	    	$( "#star3" ).addClass( "pause" );
+	    });
+	});
+
+})( jQuery );
+</script>
+<style>
+body{
+	background-color: black;
+}
+
+#s{                                /* Sun */
+  transform-origin:center center;
+  margin:auto;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background: radial-gradient(circle, #FCFC14, #FF7700);
+  box-shadow: 0px 0px 40px #FF7700;
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  position:absolute;
+}
+.Orbit {
+  margin:auto;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  position:absolute;
+  width:200px;
+  height:200px;
+  border: 2px solid white;
+  border-radius: 50%;  
+}
+#star1{
+	margin:auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    position:absolute;
+	background-color: red;
+	height: 27px;
+	width: 27px;
+	border-radius: 50%;
+    transform: translateX(100px);
+}
+.anim1{
+	 -webkit-animation: a 8s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: a 8s linear infinite; /* Firefox 5-15  */
+     animation: a 8s linear infinite; /* Chrome, Firefox 16+,    
+                                                     IE 10+, Safari 5 */ 
+}
+#star2{
+	margin:auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    position:absolute;
+	background-color: green;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+    transform: translateX(200px);
+}
+.anim2{
+	-webkit-animation: b 15s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: b 15s linear infinite; /* Firefox 5-15  */
+     animation: b 15s linear infinite; /* Chrome, Firefox 16+,    
+                                                     IE 10+, Safari 5 */ 
+}
+#star3{
+	margin:auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    position:absolute;
+	background-color: cyan;
+	height: 35px;
+	width: 35px;
+	border-radius: 50%;
+    transform: translateX(310px);
+}
+.anim3{
+	 -webkit-animation: c 20s linear infinite; /* Chrome, Safari 5 */
+    -moz-animation: c 20s linear infinite; /* Firefox 5-15  */
+     animation: c 20s linear infinite; /* Chrome, Firefox 16+,    
+                                                     IE 10+, Safari 5 */ 
+}
+#star1.off {                      /* Reset position id*/
+     margin:auto;
+     top:0;
+     bottom:0;
+     left:0;
+     right:0;
+     transform: translateX(100px);
+     position:absolute;
+    -webkit-animation: none; /* Chrome, Safari 5 */
+    -moz-animation: none; /* Firefox 5-15  */
+     animation: none; /* Chrome, Firefox 16+,    
+                                                     IE 10+, Safari 5 */ 
+	}
+#star1.pause {
+     margin:auto;
+     top:0;
+     bottom:0;
+     left:0;
+     right:0;
+     transform: translateX(100px);
+     position:absolute;
+     -webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
+     animation-play-state: paused;
+}
+#star2.off {                       /* Reset position id*/
+     margin:auto;
+     top:0;
+     bottom:0;
+     left:0;
+     right:0;
+     transform: translateX(200px);
+     position:absolute;
+    -webkit-animation: none; /* Chrome, Safari 5 */
+    -moz-animation: none; /* Firefox 5-15  */
+     animation: none; /* Chrome, Firefox 16+,    
+                                                     IE 10+, Safari 5 */ 
+	}
+#star2.pause {
+     margin:auto;
+     top:0;
+     bottom:0;
+     left:0;
+     right:0;
+     transform: translateX(200px);
+     position:absolute;
+     -webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
+     animation-play-state: paused;
+}
+#star3.off {                        /* Reset position id*/
+     margin:auto;
+     top:0;
+     bottom:0;
+     left:0;
+     right:0;
+     transform: translateX(310px);
+     position:absolute;
+    -webkit-animation: none; /* Chrome, Safari 5 */
+    -moz-animation: none; /* Firefox 5-15  */
+     animation: none; /* Chrome, Firefox 16+,    
+                                                     IE 10+, Safari 5 */ 
+	}
+#star3.pause {
+     margin:auto;
+     top:0;
+     bottom:0;
+     left:0;
+     right:0;
+     transform: translateX(310px);
+     position:absolute;
+     -webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
+     animation-play-state: paused;
+}
+@keyframes a {
+    from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+@keyframes b {
+    from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+}
+@keyframes c {
+    from { transform: rotate(0deg) translateX(310px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(310px) rotate(-360deg); }
+}
+</style>
+</head>
+<body>
+	<div id='s'></div>
+	<div class='Orbit'></div>
+	<div id="star1" class="anim1"></div>
+	<div class='Orbit' style="width: 400px; height: 400px"></div>
+	<div id="star2" class="anim2"></div>
+	<div class='Orbit' style="width: 620px; height: 620px"></div>
+	<div id="star3" class="anim3"></div>
+    <h1><font color="red">Red Planet</font></h1>
+    <p><button id="reset1">Reset</button>
+       <button id="start1">Start</button>
+       <button id="stop1">Stop</button></p>
+    <h1><font color="green">Green Planet</font></h1>
+    <p><button id="reset2">Reset</button>
+       <button id="start2">Start</button>
+       <button id="stop2">Stop</button></p>
+    <h1><font color="cyan">Blue Planet</font></h1>
+    <p><button id="reset3">Reset</button>
+       <button id="start3">Start</button>
+       <button id="stop3">Stop</button></p>
+   
+</body>
+</html>

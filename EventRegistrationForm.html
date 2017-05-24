@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Registration Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>  
+  
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Orbitron|Patua+One" rel="stylesheet"> 
+  
+  <!--Datepicker-->
+  <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+  <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script>
+         $(function() {
+            $( "#datepicker-13" ).datepicker();
+            $("#datepicker-13").datepicker("setDate", '03/19/1998');
+         });
+  </script>
+
+<style>
+  
+  option {
+    font-family: 'Patua One', cursive;
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 15px;
+    
+  }
+  optgroup {
+    font-family: 'Orbitron', sans-serif;
+    margin-top: 10px;
+    font-style: bold; 
+    margin-left: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+  body {
+    background-color: #cce6ff;
+  }
+  h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 60px;
+    text-align: center;
+    font-style: bold;
+    margin-top: 40px
+  }
+
+</style>
+</head>
+
+<body >
+
+ <h1>EVENT REGISTRATION FORM</h1>
+ <br>
+  <div class="container">
+   <form action="/action_page.php" name="myForm" ng-app="">
+     
+      <label>Name:</label>
+       <input type="Name" class="form-control" placeholder="Enter Name" name="myName" ng-model="myName" required>
+       <!--Validation-->
+       <p><span style="color:red" ng-show="myForm.myName.$invalid">The name is required.</span></p>
+      <br>
+      
+      <label>Gender:</label><br>
+       <input type="radio" name="gender" value="male" checked> Male<br>
+       <input type="radio" name="gender" value="female"> Female<br>
+       <input type="radio" name="gender" value="other"> Other
+      <br><br><br>
+      
+      <label>Date of birth:</label>
+       <input type = "text" id = "datepicker-13"><!--Datepicker-->
+      <br><br><br>
+      
+       <label>Phone:</label>
+       <input class="form-control" id="Phone" placeholder="Enter Mobile Number" maxlength="10" name="myMobile" size="10" type="phone" 
+       ng-pattern="/^[0-9]{10,10}$/" ng-model="myMobile" required>     <!--Mobile Number Validation-->
+       <p><span style="color:red" ng-show="myForm.myMobile.$invalid">Mobile number is required.</span>
+          <span style="color:red" ng-show="myForm.myMobile.$error.pattern">  Not a valid number!</span></p>
+      <br>
+
+      <label>Email:</label>
+       <input type="email" class="form-control" placeholder="Enter Email" name="myAddress" ng-model="myAddress" required>
+       <p>
+        <span style="color:red" ng-show="myForm.myAddress.$error.email">    <!--Email Validation-->
+        <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address.</span>
+        </span>
+        <span style="color:red" ng-show="myForm.myAddress.$invalid">Email required.</span>
+       </p>
+      <br>
+      
+      <label>College:</label>
+       <input type="College" class="form-control" id="College" placeholder="Enter College" name="myCollege" ng-model="myCollege" required>
+       <p><span style="color:red" ng-show="myForm.myCollege.$invalid">College is required.</span></p>
+      <br> 
+      
+      <label>Roll Number:</label>
+       <input class="form-control" id="Roll Number" placeholder="Enter Roll Number" name="myRoll" ng-model="myRoll" required>
+       <p><span style="color:red" ng-show="myForm.myRoll.$invalid">Roll number is required.</span></p>
+      <br> 
+      
+      <label>City:</label>
+       <input type="City" class="form-control" id="City" placeholder="Enter City" name="myCity" ng-model="myCity" required>
+       <p><span style="color:red" ng-show="myForm.myCity.$invalid">City is required.</span></p>
+      <br>
+  
+      <label>Events:</label>
+        <select class="form-control">
+        
+         <optgroup label="CHOREO"></optgroup>
+          <option>Choreo Night</option>
+          <option>StreetS</option>
+          <option>Freestyle Solo</option>
+          <option>Classical Solo Dance</option>
+          <option>Just Duet</option>
+
+          <optgroup label="DESIGN"></optgroup>
+          <option>Graphic Design Contest</option>
+          <option>Panache</option>
+          <option>Wear Your Creativity</option>
+          <option>Monoacting</option>
+       
+         <optgroup label="FOOD FEST"></optgroup>
+          <option>War Of Jaws</option>
+          <option>Chef Wars</option>
+       
+         <optgroup label="GAMEPLEX"></optgroup>
+          <option>Mobile Gaming</option>
+          <option>DOTA 2</option>
+          <option>CS:GO</option>
+          <option>COD 4</option>
+          <option>FIFA</option>
+       
+         <optgroup label="INFORMALS"></optgroup>
+          <option>Muggle Quiditch</option>
+          <option>Treasure Hunt</option>
+          <option>Last Man Standing</option>
+          <option>Icebreakers</option>
+          <option>Street Sports</option>
+          <option>Record Breaking Events</option>
+          <option>Life Sized Events</option>
+          <option>Cluedo</option>
+      
+         <optgroup label="MEDIA"></optgroup>
+          <option>Offline Photography</option>
+          <option>Short Film Making</option>
+         <optgroup label="MUSIC"></optgroup>
+          <option>Alankar</option>
+          <option>Powerchords</option>
+          <option>Anhad</option>
+          <option>Decibles</option>
+          <option>Saarang Super Singer</option>
+          <option>Acapella</option>
+          <option>Acoustyx</option>
+          <option>Sonata</option>
+          <option>Unplugged</option>
+         
+         <optgroup label="ORATORY"></optgroup>
+          <option>Stew</option>
+          <option>Elocution</option>
+          <option>Jam</option>
+          <option>Debate</option>
+         
+         <optgroup label="QUIZZING"></optgroup>
+          <option>Buzzer quiz</option>
+          <option>Fandom quiz</option>
+          <option>Travel n Livin</option>
+          <option>Lone Wolf</option>
+          <option>spEnt</option>
+          <option>India</option>
+         
+         <optgroup label="WORD GAME"></optgroup>
+          <option>Spell bee</option>
+          <option>What's the good word</option>
+          <option>Potpurri</option>
+          <option>Crossie</option>
+          <option>Scrabble</option>
+       
+         <optgroup label="WRITING"></optgroup>
+          <option>Onsite creative writing</option>
+          <option>Facebook Flash Fiction</option>
+      
+         <optgroup label="THESPIAN"></optgroup>
+          <option>Dial a director</option>
+          <option>Dramatics</option>
+          <option>Monoacting</option>
+          <option>Street Play</option>
+          <option>Vernacular Monoacting</option>
+     
+         <optgroup label="LIFESTYLE"></optgroup>
+          <option>Face Of Saarang</option>
+          <option style="margin-bottom: 10px;">Panache</option>
+       
+       </select>
+       <br><br><br>
+  
+    <p>   <!--Submit Button disabled if any of them have been validated wrong-->
+     <input type="submit" ng-disabled="myForm.myCity.$invalid || myForm.myRoll.$invalid || myForm.myCollege.$invalid || myForm.myAddress.$invalid || myForm.myAddress.$error.email || myForm.myName.$invalid || myForm.myMobile.$invalid || myForm.myMobile.$error.pattern">
+    </p>
+   
+   </form>
+  </div>
+
+<br><br><br><br><br>
+
+</body>
+</html>
